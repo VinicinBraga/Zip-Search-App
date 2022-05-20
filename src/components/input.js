@@ -24,7 +24,7 @@ export default function Input({ input, setInput, setCep }) {
     <div className="containerInput">
       <input
         type="text"
-        placeholder="Type your zip code..."
+        placeholder="Enter a zip code..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />

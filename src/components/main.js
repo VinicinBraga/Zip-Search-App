@@ -1,5 +1,5 @@
 import React from "react";
-import { RiDeleteBinLine } from "react-icons/ri";
+import { RiCloseFill } from "react-icons/ri";
 
 export default function Main({ cep }) {
   const handleClear = () => {
@@ -7,19 +7,21 @@ export default function Main({ cep }) {
   };
 
   return (
-    <main className="main">
-      <h2>ZIP: {cep.cep}</h2>
-      <span>
-        {cep.logradouro} - n°: {cep.complemento}
-      </span>
-      <span>Bairro: {cep.bairro} </span>
-      <span>
-        Cidade: {cep.localidade} - {cep.uf}
-      </span>
+    <div className="mainBox">
       <button className="clearAll" onClick={handleClear}>
-        Clear
-        <RiDeleteBinLine size={20} />
+        close
+        <RiCloseFill size={17} />
       </button>
-    </main>
+      <main className="main">
+        <h2>ZIP: {cep.cep}</h2>
+        <span>
+          {cep.logradouro} - n°: {cep.complemento}
+        </span>
+        <span>Bairro: {cep.bairro} </span>
+        <span>
+          Cidade: {cep.localidade} - {cep.uf}
+        </span>
+      </main>
+    </div>
   );
 }
