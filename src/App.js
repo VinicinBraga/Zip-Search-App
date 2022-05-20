@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import api from "./services/api";
 import { FiSearch } from "react-icons/fi";
+import { RiDeleteBinLine } from "react-icons/ri";
+
 import "./App.css";
 
 function App() {
@@ -16,11 +18,16 @@ function App() {
     try {
       const response = await api.get(`${input}/json`);
       setCep(response.data);
+      console.log(cep);
       setInput("");
     } catch {
       alert(`Zip code not found`);
       setInput("");
     }
+  };
+
+  const handleClear = () => {
+    document.location.reload(true);
   };
 
   return (
@@ -39,7 +46,7 @@ function App() {
       </div>
       {Object.keys(cep).length > 0 && (
         <main className="main">
-          <h2>Cep:{cep.cep}</h2>
+          <h2>ZIP: {cep.cep}</h2>
           <span>
             {cep.logradouro} - n°: {cep.complemento}
           </span>
@@ -47,6 +54,10 @@ function App() {
           <span>
             Cidade: {cep.localidade} - {cep.uf}
           </span>
+          <button className="clearAll" onClick={handleClear}>
+            Clear
+            <RiDeleteBinLine size={20} />
+          </button>
         </main>
       )}
     </div>

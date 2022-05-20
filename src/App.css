@@ -66,6 +66,7 @@
 }
 .main h2 {
   margin: 16px 0;
+  margin-top: 40px;
   font-size: 39px;
 }
 .main span {
@@ -79,9 +80,27 @@
   }
   .main h2 {
     font-size: 28px;
+    margin-top: 40px;
   }
   .main {
     width: 80%;
     min-height: 250px;
   }
+}
+.clearAll {
+  background-color: transparent;
+  color: rgb(131, 131, 131);
+  font-weight: bold;
+  border: 0;
+  display: flex;
+  margin-right: 50px;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.clearAll:hover {
+  transform: scale(1.2);
 }
